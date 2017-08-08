@@ -1,0 +1,22 @@
+Django==1.9.5
+django-auth-ldap==1.2.6
+django-extensions==1.6.6
+ecdsa==0.13
+future==0.15.2
+gevent==1.1.1
+greenlet==0.4.9
+gunicorn==19.4.5
+# MySQL-python==1.2.5
+pycrypto==2.6.1
+python-jose==0.6.2
+python-ldap==2.4.19
+pytz==2016.6.1
+requests==2.9.1
+six==1.10.0
+thrift==0.9.0
+
+# django-cas==2.1.1
+# The latest version in pypi is 2.0.3, so install from the download url.
+# default.tar.gz is the 'default' branch version instead of the release version.
+# DON'T use 2.1.1.tar.gz, which doesn't fix the get_host issue.
+# https://bitbucket.org/cpcc/django-cas/get/default.tar.gz

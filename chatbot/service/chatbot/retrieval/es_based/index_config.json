@@ -1,0 +1,94 @@
+{
+    "mappings": {
+        "_default_": {
+            "properties": {
+                "src": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                },
+                "post": {
+                    "type": "string",
+                    "analyzer": "chatbot_analyzer_v1",
+                    "search_analyzer": "chatbot_analyzer_search_v1",
+                    "fields": {
+                        "shingles": {
+                            "type": "string",
+                            "analyzer": "chatbot_analyzer_shingle_v1"
+                        }
+                    }
+                },
+                "resp": {
+                    "type": "string",
+                    "analyzer": "chatbot_analyzer_v1",
+                    "search_analyzer": "chatbot_analyzer_search_v1",
+                    "fields": {
+                        "shingles": {
+                            "type": "string",
+                            "analyzer": "chatbot_analyzer_shingle_v1"
+                        }
+                    }
+                }
+            }
+        },
+        "weibo": {},
+        "purchase": {},
+        "miliao": {}
+    },
+    "settings": {
+        "index": {
+            "number_of_shards": 1
+        },
+        "analysis": {
+            "filter": {
+                "stop_v1": {
+                    "type": "stop",
+                    "stopwords_path": "dicts/stopwords.dict"
+                },
+                "synonym_v1": {
+                    "type": "synonym",
+                    "synonyms_path": "dicts/synonyms.dict"
+                },
+                "shingle_v1": {
+                    "type": "shingle",
+                    "min_shingle_size": 2,
+                    "max_shingle_size": 2,
+                    "output_unigrams": false
+                }
+            },
+            "analyzer": {
+                "chatbot_analyzer_simple": {
+                    "type": "custom",
+                    "tokenizer": "whitespace",
+                    "filter": [
+                        "lowercase"
+                    ]
+                },
+                "chatbot_analyzer_v1": {
+                    "type": "custom",
+                    "tokenizer": "whitespace",
+                    "filter": [
+                        "lowercase",
+                        "stop_v1"
+                    ]
+                },
+                "chatbot_analyzer_shingle_v1": {
+                    "type": "custom",
+                    "tokenizer": "whitespace",
+                    "filter": [
+                        "lowercase",
+                        "shingle_v1"
+                    ]
+                },
+                "chatbot_analyzer_search_v1": {
+                    "type": "custom",
+                    "tokenizer": "whitespace",
+                    "filter": [
+                        "lowercase",
+                        "stop_v1",
+                        "synonym_v1"
+                    ]
+                }
+            }
+        }
+    }
+}

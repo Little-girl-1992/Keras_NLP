@@ -1,0 +1,9 @@
+kazoo
+pyquery
+html2text
+thrift
+kafka-python
+retrying
+requests
+ujson
+pyformance

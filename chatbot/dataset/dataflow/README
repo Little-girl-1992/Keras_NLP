@@ -1,0 +1,21 @@
+## install python sds sdk
+```
+git clone https://github.com/XiaoMi/galaxy-sdk-python.git
+cd galaxy-sdk-python
+python setup.py install
+```
+
+## install requirements
+```
+pip install -r requeirements.txt
+```
+
+## Run
+```
+# MUST RUN IN THIS DIR
+DOUBAN_CRAWL_ENV=STAGING python -m douban.douban_scheduler
+DOUBAN_CRAWL_ENV=STAGING python -m douban.douban_crawler_consumer
+DOUBAN_CRAWL_ENV=STAGING python -m douban.douban_struct_to_convs
+# or use nohup
+DOUBAN_CRAWL_ENV=C3 nohup python -m douban.douban_crawler_consumer &> /path/to.log&
+```

@@ -1,0 +1,1 @@
+from ttypes import ChatbotDoubanGroupPage, ChatbotDoubanGroupStruct

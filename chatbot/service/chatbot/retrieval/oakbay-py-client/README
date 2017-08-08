@@ -1,0 +1,7 @@
+## install
+python setup.py install
+pip install kazoo
+pip install thrift
+
+## usage
+from OakbayClient import OakbayClient

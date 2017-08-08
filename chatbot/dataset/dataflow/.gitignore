@@ -1,0 +1,8 @@
+test_data/
+.idea/
+*.pyc
+*/*.pyc
+*/*/*.pyc
+__pycache__/
+*/__pycache__/
+*/*/__pycache__/
